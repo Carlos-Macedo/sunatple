@@ -33,7 +33,7 @@ class SalesController < ApplicationController
           sale.ruc = current_ruc
           sale.year = current_year
           sale.month = current_month
-          sale.periodo = "#{current_year}#{current_month.rjust(2, "0")}00"
+          sale.periodo = "#{current_year}#{current_month.to_s.rjust(2, "0")}00"
           sale.cuo = spreadsheet.cell(i, 1)
           sale.correlativo = "M#{spreadsheet.cell(i, 1).to_s[4..-1]}"
           sale.fecha_emision = spreadsheet.cell(i, 2)

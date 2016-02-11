@@ -41,12 +41,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="purchases_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="purchases_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/purchases_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7103064">
-              <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
-              <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="39" column="65" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sales_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/sales_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.666667">
+              <caret line="31" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application_helper.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2506964">
+              <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="constantes.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/initializers/constantes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="60" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -64,14 +103,12 @@
         <option value="$PROJECT_DIR$/config/initializers/mime_types.rb" />
         <option value="$PROJECT_DIR$/config/initializers/constant.rb" />
         <option value="$PROJECT_DIR$/config/initializers/constantes.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160210031245_create_sales.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/sale.rb" />
         <option value="$PROJECT_DIR$/app/models/purchase.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/sales_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/sales/index.txt.erb" />
         <option value="$PROJECT_DIR$/app/views/purchases/index.txt.erb" />
         <option value="$PROJECT_DIR$/app/views/sales/index.html.erb" />
@@ -80,6 +117,8 @@
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/db/migrate/20160210031344_create_purchases.rb" />
         <option value="$PROJECT_DIR$/app/controllers/purchases_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/sales_controller.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
       </list>
     </option>
   </component>
@@ -293,7 +332,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../insad" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="SearchEverywhereHistoryKey" value="pur c&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/app/controllers/purchases_controller.rb&#10;create&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/db/migrate/20160210031344_create_purchases.rb&#10;gem&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/Gemfile&#10;Pur&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/app/models/purchase.rb&#10;cre&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/db/migrate/20160210031245_create_sales.rb&#10;rout&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/routes.rb&#10;routes&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/routes.rb&#10;crea&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/db/migrate/20160210031245_create_sales.rb&#10;create p&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/db/migrate/20160210031344_create_purchases.rb&#10;cons&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/initializers/constantes.rb&#10;app&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/app/controllers/application_controller.rb&#10;sale c&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/app/controllers/sales_controller.rb&#10;ro&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/routes.rb&#10;app h&#9;null&#9;null&#10;ge&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/Gemfile&#10;route&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/routes.rb&#10;mime&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/initializers/mime_types.rb&#10;enviro&#9;null&#9;null&#10;d&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/database.yml&#10;rou&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/routes.rb" />
+    <property name="SearchEverywhereHistoryKey" value="cons&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/initializers/constantes.rb&#10;app&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/app/helpers/application_helper.rb&#10;app h&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/app/views/layouts/application.html.erb&#10;sale c&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/app/controllers/sales_controller.rb&#10;pur c&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/app/controllers/purchases_controller.rb&#10;create&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/db/migrate/20160210031344_create_purchases.rb&#10;gem&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/Gemfile&#10;Pur&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/app/models/purchase.rb&#10;cre&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/db/migrate/20160210031245_create_sales.rb&#10;rout&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/routes.rb&#10;routes&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/routes.rb&#10;crea&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/db/migrate/20160210031245_create_sales.rb&#10;create p&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/db/migrate/20160210031344_create_purchases.rb&#10;ro&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/routes.rb&#10;ge&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/Gemfile&#10;route&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/routes.rb&#10;mime&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/initializers/mime_types.rb&#10;enviro&#9;null&#9;null&#10;d&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/database.yml&#10;rou&#9;FILE&#9;file:///Users/CarlosMacedo/SITES/SunatPle/config/routes.rb" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -692,14 +731,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81877726">
-          <caret line="25" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.279476">
@@ -707,14 +738,6 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/constantes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6069869">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,14 +773,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/sales_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.222222">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/sales/index.txt.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.4583333">
@@ -770,14 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9834711">
           <caret line="24" column="86" selection-start-line="24" selection-start-column="86" selection-end-line="24" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7107438">
-          <caret line="31" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -816,9 +823,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/purchases_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7103064">
-          <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
-          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="65" selection-start-line="39" selection-start-column="61" selection-end-line="39" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/sales_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="56" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.666667">
+          <caret line="31" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/constantes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="60" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2506964">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
           <folding />
         </state>
       </provider>

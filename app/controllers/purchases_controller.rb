@@ -37,7 +37,7 @@ class PurchasesController < ApplicationController
           purchase.ruc = current_ruc
           purchase.year = current_year
           purchase.month = current_month
-          purchase.periodo = "#{current_year}#{current_month.rjust(2, "0")}00"
+          purchase.periodo = "#{current_year}#{current_month.to_s.rjust(2, "0")}00"
           purchase.cuo = spreadsheet.cell(i, 1)
           purchase.correlativo = "M#{spreadsheet.cell(i, 1).to_s[4..-1]}"
           purchase.fecha_emision = spreadsheet.cell(i, 2)
