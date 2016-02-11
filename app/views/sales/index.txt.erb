@@ -1,0 +1,40 @@
+<% @sales.each do |sale| %>
+<%
+@sale_1 = sale.periodo
+@sale_2 = sale.cuo
+@sale_3 = sale.correlativo
+@sale_4 = sale.fecha_emision.blank? ? "" : sale.fecha_emision.strftime("%d/%m/%Y")
+@sale_5 = sale.fecha_vencimiento.blank? ? "" : sale.fecha_vencimiento.strftime("%d/%m/%Y")
+@sale_6 = sale.tipo_comprobante
+@sale_7 = sale.serie.to_s.rjust(4,"0")
+@sale_8 = sale.numero.to_s.rjust(7,"0")
+@sale_9 = sale.numero_final
+@sale_10 = sale.tipo_documento
+@sale_11 = sale.numero_ruc == "ANULADO" ? "0" : sale.numero_ruc
+@sale_12 = sale.denominacion
+@sale_13 = number_with_precision(sale.exportacion, precision: 2, delimiter: "")
+@sale_14 = number_with_precision(sale.gravada, precision: 2, delimiter: "")
+@sale_15 = number_with_precision(sale.descuento_gravada, precision: 2, delimiter: "")
+@sale_16 = number_with_precision(sale.igv, precision: 2, delimiter: "")
+@sale_17 = number_with_precision(sale.descuento_igv, precision: 2, delimiter: "")
+@sale_18 = number_with_precision(sale.exonerada, precision: 2, delimiter: "")
+@sale_19 = number_with_precision(sale.inafecta, precision: 2, delimiter: "")
+@sale_20 = number_with_precision(sale.isc, precision: 2, delimiter: "")
+@sale_21 = number_with_precision(sale.gravada, precision: 2, delimiter: "")
+@sale_22 = number_with_precision(sale.impuesto_ventas_arroz_pilado, precision: 2, delimiter: "")
+@sale_23 = number_with_precision(sale.otros, precision: 2, delimiter: "")
+@sale_24 = number_with_precision(sale.total, precision: 2, delimiter: "")
+@sale_25 = sale.codigo_moneda
+@sale_26 = number_with_precision(sale.tipo_cambio, precision: 3, delimiter: "")
+@sale_27 = sale.fecha_comprobante_modificado.blank? ? "" : sale.fecha_comprobante_modificado.strftime("%d/%m/%Y")
+@sale_28 = sale.tipo_comprobante_modificado
+@sale_29 = sale.serie_comprobante_modificado.to_s.rjust(4,"0")
+@sale_30 = sale.numero_comprobante_modificado.to_s.rjust(7,"0")
+@sale_31 = sale.identificacion_contrato_proyecto
+@sale_32 = sale.inconsistencia_tipo__cambio
+@sale_33 = sale.indicador_comprobante_cancelado
+@sale_34 = sale.numero_ruc == "ANULADO" ? "2" : "1"
+
+ %>
+<%= @sale_1 %>|<%= @sale_2 %>|<%= @sale_3 %>|<%= @sale_4 %>|<%= @sale_5 %>|<%= @sale_6 %>|<%= @sale_7 %>|<%= @sale_8 %>|<%= @sale_9 %>|<%= @sale_10 %>|<%= @sale_11 %>|<%= @sale_12 %>|<%= @sale_13 %>|<%= @sale_14 %>|<%= @sale_15 %>|<%= @sale_16 %>|<%= @sale_17 %>|<%= @sale_18 %>|<%= @sale_19 %>|<%= @sale_20 %>|<%= @sale_21 %>|<%= @sale_22 %>|<%= @sale_23 %>|<%= @sale_24 %>|<%= @sale_25 %>|<%= @sale_26 %>|<%= @sale_27 %>|<%= @sale_28 %>|<%= @sale_29 %>|<%= @sale_30 %>|<%= @sale_31 %>|<%= @sale_32 %>|<%= @sale_33 %>|<%= @sale_34 %>|%>
+<% end %>

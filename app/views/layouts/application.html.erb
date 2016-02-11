@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+<div class="row">
+  <h1 class="text-center"><a href="/">PLE</a></h1>
+
+  <h3 class="text-center">RUC: <%= current_ruc %> ANIO: <%= current_year %> MES: <%= current_month %>
+  </h3>
+
+  <div class="small-2 large-2 columns"><%= select_tag(:current_month, options_for_select(Months::MONTHS, selected: current_month)) %></div>
+  <div class="small-4 large-2 columns"><%= select_tag(:current_year, options_for_select(Years::YEARS, selected: current_year)) %></div>
+  <div class="small-6 large-4 columns"><%= select_tag(:current_ruc, options_for_select(Rucs::RUCS, selected: current_ruc), include_blank: "Elegir") %></div>
+  <div class="small-6 large-2 columns"><%= link_to "Compras", purchases_path %></div>
+  <div class="small-6 large-2 columns"><%= link_to "Ventas", sales_path %></div>
+
+  <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "alert alert-info" %>
+  <% end %>
+</div>
+
+<div class="row">
+  <%= yield %>
+</div>
+
+</body>
+</html>

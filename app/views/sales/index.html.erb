@@ -1,0 +1,93 @@
+<h1 class="text-center">VENTAS</h1>
+
+<%= link_to "Borrar", sales_path(delete: "all"), data: {confirm: "seguor?"} %>
+<%= link_to "Descargar PLE (140100)", sales_path(format: :txt, type: "140100"), target: "_blank" %>
+<%= link_to "Descargar PLE (140200)", sales_path(format: :txt, type: "140200"), target: "_blank" %>
+<hr>
+<fieldset>
+  <%= form_tag subir_excel_sale_path, multipart: true do %>
+      <%= file_field_tag :file %>
+      <%= submit_tag "Subir el EXCEL", class: "button expand margin-none", name: "upload" %>
+  <% end %>
+</fieldset>
+<hr>
+<div>
+  <table>
+    <tr>
+      <th>periodo</th>
+      <th>cuo</th>
+      <th>correlativo</th>
+      <th>fecha_emision</th>
+      <th>fecha_vencimiento</th>
+      <th>tipo_comprobante</th>
+      <th>serie</th>
+      <th>numero</th>
+      <th>numero_final</th>
+      <th>tipo_documento</th>
+      <th>numero_ruc</th>
+      <th>denominacion</th>
+      <th>exportacion</th>
+      <th>gravada</th>
+      <th>descuento_gravada</th>
+      <th>igv</th>
+      <th>descuento_igv</th>
+      <th>exonerada</th>
+      <th>inafecta</th>
+      <th>isc</th>
+      <th>gravada_arroz_pilado</th>
+      <th>impuesto_ventas_arroz_pilado</th>
+      <th>otros</th>
+      <th>total</th>
+      <th>codigo_moneda</th>
+      <th>tipo_cambio</th>
+      <th>fecha_comprobante_modificado</th>
+      <th>tipo_comprobante_modificado</th>
+      <th>serie_comprobante_modificado</th>
+      <th>numero_comprobante_modificado</th>
+      <th>identificacion_contrato_proyecto</th>
+      <th>inconsistencia_tipo__cambio</th>
+      <th>indicador_comprobante_cancelado</th>
+      <th>estado_oportunidad_de_anotacion</th>
+    </tr>
+    <% @sales.each do |sale| %>
+        <tr>
+          <td><%= sale.periodo %></td>
+          <td><%= sale.cuo %></td>
+          <td><%= sale.correlativo %></td>
+          <td><%= sale.fecha_emision %></td>
+          <td><%= sale.fecha_vencimiento %></td>
+          <td><%= sale.tipo_comprobante %></td>
+          <td><%= sale.serie %></td>
+          <td><%= sale.numero %></td>
+          <td><%= sale.numero_final %></td>
+          <td><%= sale.tipo_documento %></td>
+          <td><%= sale.numero_ruc %></td>
+          <td><%= sale.denominacion %></td>
+          <td><%= sale.exportacion %></td>
+          <td><%= sale.gravada %></td>
+          <td><%= sale.descuento_gravada %></td>
+          <td><%= sale.igv %></td>
+          <td><%= sale.descuento_igv %></td>
+          <td><%= sale.exonerada %></td>
+          <td><%= sale.inafecta %></td>
+          <td><%= sale.isc %></td>
+          <td><%= sale.gravada_arroz_pilado %></td>
+          <td><%= sale.impuesto_ventas_arroz_pilado %></td>
+          <td><%= sale.otros %></td>
+          <td><%= sale.total %></td>
+          <td><%= sale.codigo_moneda %></td>
+          <td><%= sale.tipo_cambio %></td>
+          <td><%= sale.fecha_comprobante_modificado %></td>
+          <td><%= sale.tipo_comprobante_modificado %></td>
+          <td><%= sale.serie_comprobante_modificado %></td>
+          <td><%= sale.numero_comprobante_modificado %></td>
+          <td><%= sale.identificacion_contrato_proyecto %></td>
+          <td><%= sale.inconsistencia_tipo__cambio %></td>
+          <td><%= sale.indicador_comprobante_cancelado %></td>
+          <td><%= sale.estado_oportunidad_de_anotacion %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>
+
+</div>

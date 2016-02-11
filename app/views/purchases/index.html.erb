@@ -1,0 +1,115 @@
+<div>
+  <h1 class="text-center">COMPRAS</h1>
+
+  <%= link_to "Borrar", purchases_path(delete: "all"), data: {confirm: "seguor?"} %>
+  <%= link_to "Descargar PLE (080100)", purchases_path(format: :txt, type: "080100"), target: "_blank" %>
+  <%= link_to "Descargar PLE (080200)", purchases_path(format: :txt, type: "080200"), target: "_blank" %>
+  <%= link_to "Descargar PLE (080300)", purchases_path(format: :txt, type: "080300"), target: "_blank" %>
+  <hr>
+  <fieldset>
+    <%= form_tag subir_excel_purchase_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Subir el EXCEL", class: "button expand margin-none", name: "upload" %>
+    <% end %>
+  </fieldset>
+  <hr>
+  <div>
+    <table>
+      <tr>
+        <th>ruc</th>
+        <th>year</th>
+        <th>month</th>
+        <th>periodo</th>
+        <th>cuo</th>
+        <th>correlativo</th>
+        <th>fecha_emision</th>
+        <th>fecha_vencimiento</th>
+        <th>tipo_comprobante</th>
+        <th>serie</th>
+        <th>anho_dua_dsi</th>
+        <th>numero</th>
+        <th>numero_final</th>
+        <th>tipo_documento</th>
+        <th>numero_ruc</th>
+        <th>denominacion</th>
+        <th>base_gravada_1</th>
+        <th>igv_1</th>
+        <th>base_gravada_2</th>
+        <th>igv_2</th>
+        <th>base_gravada_3</th>
+        <th>igv_3</th>
+        <th>no_gravadas</th>
+        <th>isc</th>
+        <th>otros</th>
+        <th>total</th>
+        <th>codigo_moneda</th>
+        <th>tipo_cambio</th>
+        <th>fecha_comprobante_modificado</th>
+        <th>tipo_comprobante_modificado</th>
+        <th>serie_comprobante_modificado</th>
+        <th>codigo_dependencia_aduanas_modificado</th>
+        <th>numero_comprobante_modificado</th>
+        <th>fecha_emision_constancia_detraccion</th>
+        <th>numero_constancia_detraccion</th>
+        <th>comprobante_pago_sujeto_a_retencion</th>
+        <th>clasificacion_de_bienes_adquiridos</th>
+        <th>identificacion_contrato_proyecto</th>
+        <th>inconsistencia_tipo_de_cambio</th>
+        <th>inconsistencia_proveedor_no_habidos</th>
+        <th>inconsistencia_proveedor_renucias</th>
+        <th>inconsistecia_por_dni</th>
+        <th>indicador_de_bancarizacion</th>
+        <th>estado_oportunidad_de_anotacion</th>
+      </tr>
+      <% @purchases.each do |purchase| %>
+          <tr>
+            <td><%= purchase.ruc %></td>
+            <td><%= purchase.year %></td>
+            <td><%= purchase.month %></td>
+            <td><%= purchase.periodo %></td>
+            <td><%= purchase.cuo %></td>
+            <td><%= purchase.correlativo %></td>
+            <td><%= purchase.fecha_emision %></td>
+            <td><%= purchase.fecha_vencimiento %></td>
+            <td><%= purchase.tipo_comprobante %></td>
+            <td><%= purchase.serie %></td>
+            <td><%= purchase.anho_dua_dsi %></td>
+            <td><%= purchase.numero %></td>
+            <td><%= purchase.numero_final %></td>
+            <td><%= purchase.tipo_documento %></td>
+            <td><%= purchase.numero_ruc %></td>
+            <td><%= purchase.denominacion %></td>
+            <td><%= purchase.base_gravada_1 %></td>
+            <td><%= purchase.igv_1 %></td>
+            <td><%= purchase.base_gravada_2 %></td>
+            <td><%= purchase.igv_2 %></td>
+            <td><%= purchase.base_gravada_3 %></td>
+            <td><%= purchase.igv_3 %></td>
+            <td><%= purchase.no_gravadas %></td>
+            <td><%= purchase.isc %></td>
+            <td><%= purchase.otros %></td>
+            <td><%= purchase.total %></td>
+            <td><%= purchase.codigo_moneda %></td>
+            <td><%= purchase.tipo_cambio %></td>
+            <td><%= purchase.fecha_comprobante_modificado %></td>
+            <td><%= purchase.tipo_comprobante_modificado %></td>
+            <td><%= purchase.serie_comprobante_modificado %></td>
+            <td><%= purchase.codigo_dependencia_aduanas_modificado %></td>
+            <td><%= purchase.numero_comprobante_modificado %></td>
+            <td><%= purchase.fecha_emision_constancia_detraccion %></td>
+            <td><%= purchase.numero_constancia_detraccion %></td>
+            <td><%= purchase.comprobante_pago_sujeto_a_retencion %></td>
+            <td><%= purchase.clasificacion_de_bienes_adquiridos %></td>
+            <td><%= purchase.identificacion_contrato_proyecto %></td>
+            <td><%= purchase.inconsistencia_tipo_de_cambio %></td>
+            <td><%= purchase.inconsistencia_proveedor_no_habidos %></td>
+            <td><%= purchase.inconsistencia_proveedor_renucias %></td>
+            <td><%= purchase.inconsistecia_por_dni %></td>
+            <td><%= purchase.indicador_de_bancarizacion %></td>
+            <td><%= purchase.estado_oportunidad_de_anotacion %></td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+
+</div>

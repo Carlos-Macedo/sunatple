@@ -1,0 +1,47 @@
+<% @purchases.each do |purchase| %>
+<%
+ @purchase_1 = purchase.periodo
+ @purchase_2 = purchase.cuo
+ @purchase_3 = purchase.correlativo
+ @purchase_4 = purchase.fecha_emision.strftime("%d/%m/%Y")
+ @purchase_5 = purchase.fecha_vencimiento.blank? ? "" : purchase.fecha_vencimiento.strftime("%d/%m/%Y")
+ @purchase_6 = purchase.tipo_comprobante
+ @purchase_7 = purchase.serie.to_s.rjust(4,"0")
+ @purchase_8 = purchase.anho_dua_dsi
+ @purchase_9 = purchase.numero.to_s.rjust(7,"0")
+ @purchase_10 = purchase.numero_final
+ @purchase_11 = purchase.numero_ruc == "ANULADO" ? "0" : purchase.tipo_documento
+ @purchase_12 = purchase.numero_ruc == "ANULADO" ? "0" : purchase.numero_ruc
+ @purchase_13 = purchase.denominacion
+ @purchase_14 = number_with_precision(purchase.base_gravada_1.to_f, precision: 2, delimiter: "")
+ @purchase_15 = number_with_precision(purchase.igv_1.to_f, precision: 2, delimiter: "")
+ @purchase_16 = number_with_precision(purchase.base_gravada_2.to_f, precision: 2, delimiter: "")
+@purchase_17 = number_with_precision(purchase.igv_2.to_f, precision: 2, delimiter: "")
+@purchase_18 = number_with_precision(purchase.base_gravada_3.to_f, precision: 2, delimiter: "")
+@purchase_19 = number_with_precision(purchase.igv_3.to_f, precision: 2, delimiter: "")
+@purchase_20 = number_with_precision(purchase.no_gravadas.to_f, precision: 2, delimiter: "")
+@purchase_21 = number_with_precision(purchase.isc.to_f, precision: 2, delimiter: "")
+@purchase_22 = number_with_precision(purchase.otros.to_f, precision: 2, delimiter: "")
+@purchase_23 = number_with_precision(purchase.total.to_f, precision: 2, delimiter: "")
+@purchase_24 = purchase.codigo_moneda
+@purchase_25 = number_with_precision(purchase.tipo_cambio.to_f, precision: 3, delimiter: "")
+@purchase_26 = purchase.fecha_comprobante_modificado.blank? ? "" : purchase.fecha_comprobante_modificado.strftime("%d/%m/%Y")
+@purchase_27 = purchase.tipo_comprobante_modificado
+@purchase_28 = purchase.serie_comprobante_modificado.to_s.rjust(4,"0")
+@purchase_29 = purchase.codigo_dependencia_aduanas_modificado
+@purchase_30 = purchase.numero_comprobante_modificado.to_s.rjust(7,"0")
+@purchase_31 = purchase.fecha_emision_constancia_detraccion.blank? ? "" : purchase.fecha_emision_constancia_detraccion.strftime("%d/%m/%Y")
+@purchase_32 = purchase.numero_constancia_detraccion
+@purchase_33 = purchase.comprobante_pago_sujeto_a_retencion
+@purchase_34 = purchase.clasificacion_de_bienes_adquiridos
+@purchase_35 = purchase.identificacion_contrato_proyecto
+@purchase_36 = purchase.inconsistencia_tipo_de_cambio
+@purchase_37 = purchase.inconsistencia_proveedor_no_habidos
+@purchase_38 = purchase.inconsistencia_proveedor_renucias
+@purchase_39 = purchase.inconsistecia_por_dni
+@purchase_40 = purchase.indicador_de_bancarizacion
+@purchase_41 = purchase.estado_oportunidad_de_anotacion
+
+ %>
+<%= @purchase_1 %>|<%= @purchase_2 %>|<%= @purchase_3 %>|<%= @purchase_4 %>|<%= @purchase_5 %>|<%= @purchase_6 %>|<%= @purchase_7 %>|<%= @purchase_8 %>|<%= @purchase_9 %>|<%= @purchase_10 %>|<%= @purchase_11 %>|<%= @purchase_12 %>|<%= @purchase_13 %>|<%= @purchase_14 %>|<%= @purchase_15 %>|<%= @purchase_16 %>|<%= @purchase_17 %>|<%= @purchase_18 %>|<%= @purchase_19 %>|<%= @purchase_20 %>|<%= @purchase_21 %>|<%= @purchase_22 %>|<%= @purchase_23 %>|<%= @purchase_24 %>|<%= @purchase_25 %>|<%= @purchase_26 %>|<%= @purchase_27 %>|<%= @purchase_28 %>|<%= @purchase_29 %>|<%= @purchase_30 %>|<%= @purchase_31 %>|<%= @purchase_32 %>|<%= @purchase_33 %>|<%= @purchase_34 %>|<%= @purchase_35 %>|<%= @purchase_36 %>|<%= @purchase_37 %>|<%= @purchase_38 %>|<%= @purchase_39 %>|<%= @purchase_40 %>|<%= @purchase_41 %>|
+<% end %>
