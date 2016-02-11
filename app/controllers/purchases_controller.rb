@@ -17,7 +17,7 @@ class PurchasesController < ApplicationController
     end
     respond_to do |format|
       format.html
-      filename_txt = "LE#{current_ruc}#{current_year}#{current_month.rjust(2, '0')}00#{@id_libro}001#{@id_contenido}11.TXT"
+      filename_txt = "LE#{current_ruc}#{current_year.to_s}#{current_month.to_s.rjust(2, '0')}00#{@id_libro}001#{@id_contenido}11.TXT"
       format.txt do
         response.headers['Content-Disposition'] = "attachment; filename=#{filename_txt}"
         render "purchases/index.txt.erb"

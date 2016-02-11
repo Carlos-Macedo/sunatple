@@ -45,6 +45,7 @@ class CreatePurchases < ActiveRecord::Migration
       t.string :inconsistecia_por_dni
       t.string :indicador_de_bancarizacion
       t.string :estado_oportunidad_de_anotacion
+      t.boolean :no_domiciliado, default: false
 
       t.timestamps null: false
     end
