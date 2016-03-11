@@ -1,14 +1,16 @@
-<% @purchases.each do |purchase| %>
+<% if params[:type] == "080100" %>
+<% @purchases.where(no_domiciliado: false).each do |purchase| %>
 <%
  @purchase_1 = purchase.periodo
  @purchase_2 = purchase.cuo
  @purchase_3 = purchase.correlativo
  @purchase_4 = purchase.fecha_emision.strftime("%d/%m/%Y")
  @purchase_5 = purchase.fecha_vencimiento.blank? ? "" : purchase.fecha_vencimiento.strftime("%d/%m/%Y")
- @purchase_6 = purchase.tipo_comprobante
- @purchase_7 = purchase.serie.to_s.rjust(4,"0")
+ tipo_comprobante = purchase.tipo_comprobante == "RE" ? "00" : purchase.tipo_comprobante
+ @purchase_6 = tipo_comprobante
+ @purchase_7 = purchase.serie.to_s.sub(/^[0:]*/, "").strip.rjust(4,"0")
  @purchase_8 = purchase.anho_dua_dsi
- @purchase_9 = purchase.numero.to_s.rjust(7,"0")
+ @purchase_9 = purchase.numero.to_s.sub(/^[0:]*/, "").strip.delete('-').rjust(7,"0")
  @purchase_10 = purchase.numero_final
  @purchase_11 = purchase.numero_ruc == "ANULADO" ? "0" : purchase.tipo_documento
  @purchase_12 = purchase.numero_ruc == "ANULADO" ? "0" : purchase.numero_ruc
@@ -40,8 +42,55 @@
 @purchase_38 = purchase.inconsistencia_proveedor_renucias
 @purchase_39 = purchase.inconsistecia_por_dni
 @purchase_40 = purchase.indicador_de_bancarizacion
-@purchase_41 = purchase.estado_oportunidad_de_anotacion
+@tipo_de_operacion = (purchase.fecha_emision.to_time < "#{current_year}-#{current_month.to_s.rjust(2,'0')}-01".to_time) ? "6" : "1"
+@purchase_41 = (purchase.tipo_comprobante == "02" || purchase.tipo_comprobante == "03" || purchase.tipo_comprobante == "10" || purchase.tipo_comprobante == "91") ? "0" : @tipo_de_operacion
 
  %>
 <%= @purchase_1 %>|<%= @purchase_2 %>|<%= @purchase_3 %>|<%= @purchase_4 %>|<%= @purchase_5 %>|<%= @purchase_6 %>|<%= @purchase_7 %>|<%= @purchase_8 %>|<%= @purchase_9 %>|<%= @purchase_10 %>|<%= @purchase_11 %>|<%= @purchase_12 %>|<%= @purchase_13 %>|<%= @purchase_14 %>|<%= @purchase_15 %>|<%= @purchase_16 %>|<%= @purchase_17 %>|<%= @purchase_18 %>|<%= @purchase_19 %>|<%= @purchase_20 %>|<%= @purchase_21 %>|<%= @purchase_22 %>|<%= @purchase_23 %>|<%= @purchase_24 %>|<%= @purchase_25 %>|<%= @purchase_26 %>|<%= @purchase_27 %>|<%= @purchase_28 %>|<%= @purchase_29 %>|<%= @purchase_30 %>|<%= @purchase_31 %>|<%= @purchase_32 %>|<%= @purchase_33 %>|<%= @purchase_34 %>|<%= @purchase_35 %>|<%= @purchase_36 %>|<%= @purchase_37 %>|<%= @purchase_38 %>|<%= @purchase_39 %>|<%= @purchase_40 %>|<%= @purchase_41 %>|
+<% end %>
+<% end %>
+<% if params[:type] == "080200" %>
+<% @purchases.where(no_domiciliado: true).each do |purchase| %>
+<%
+@purchase_1 = purchase.periodo
+@purchase_2 = purchase.cuo
+@purchase_3 = purchase.correlativo
+@purchase_4 = purchase.fecha_emision.strftime("%d/%m/%Y")
+tipo_comprobante = purchase.tipo_comprobante == "RE" ? "00" : purchase.tipo_comprobante
+@purchase_5 = tipo_comprobante
+@purchase_6 = purchase.serie.to_s.sub(/^[0:]*/, "").strip.rjust(4,"0")
+@purchase_7 = purchase.numero.to_s.sub(/^[0:]*/, "").strip.delete('-').rjust(7,"0")
+@purchase_8 = number_with_precision(purchase.total.to_f, precision: 2, delimiter: "")
+@purchase_9 = ""
+@purchase_10 = number_with_precision(purchase.total.to_f, precision: 2, delimiter: "")
+@purchase_11 = "00"
+@purchase_12 = purchase.serie.to_s.sub(/^[0:]*/, "").strip.rjust(4,"0")
+@purchase_13 = ""
+@purchase_14 = purchase.numero.to_s.sub(/^[0:]*/, "").strip.delete('-').rjust(7,"0")
+@purchase_15 = "" #Monto de retención del IGV
+@purchase_16 = purchase.codigo_moneda
+@purchase_17 = number_with_precision(purchase.tipo_cambio.to_f, precision: 3, delimiter: "")
+@purchase_18 = "" #obligatorio pais
+@purchase_19 = "" #obligatorio denominación NO domiciliado
+@purchase_20 = "" #domicilio NO domiciliado
+@purchase_21 = "" #obligatorio Número de identificación del sujeto no domiciliad
+@purchase_22 = "" #Número de identificación fiscal del beneficiario efectivo de los pagos
+@purchase_23 = "" #Apellidos y nombres, denominación o razón social del beneficiario efectivo de los pagos. En caso de personas naturales se debe consignar los datos en el siguiente orden: apellido paterno, apellido materno y nombre completo
+@purchase_24 = "" #Pais de la residencia del beneficiario efectivo de los pagos
+@purchase_25 = "00" #Vínculo entre el contribuyente y el residente en el extranjero  tabla 27
+@purchase_26 = "" #Renta Bruta
+@purchase_27 = "" #Deducción / Costo de Enajenación de bienes de capita
+@purchase_28 = "" #Renta Neta
+@purchase_29 = "" #Tasa de retención
+@purchase_30 = "" #Impuesto retenido
+@purchase_31 = "00" #Convenios para evitar la doble imposición tabla 33
+@purchase_32 = "" #Exoneración aplicada Numérico 1. Validar con parámetro tabla 33
+@purchase_33 = "" #obligatorio Tipo de Renta Numérico 1. Obligatorio 2. Validar con parámetro tabla 31
+@purchase_34 = "" #Modalidad del servicio prestado por el no domiciliado Numérico 1. Validar con parámetro tabla 32
+@purchase_35 = "" #Aplicación del penultimo parrafo del Art. 76° de la Ley del Impuesto a la Renta Numérico 1. Consignar 1 si aplica
+@purchase_36 = "0" # Registrar '0' cuando la operación (anotación optativa sin efecto en el IGV) corresponde al periodo. 3. Registrar '9' cuando se realice un ajuste o rectificación en la anotación de la información de una operación registrada en un periodo anterior.
+@purchase_37 = ""
+%>
+<%= @purchase_1 %>|<%= @purchase_2 %>|<%= @purchase_3 %>|<%= @purchase_4 %>|<%= @purchase_5 %>|<%= @purchase_6 %>|<%= @purchase_7 %>|<%= @purchase_8 %>|<%= @purchase_9 %>|<%= @purchase_10 %>|<%= @purchase_11 %>|<%= @purchase_12 %>|<%= @purchase_13 %>|<%= @purchase_14 %>|<%= @purchase_15 %>|<%= @purchase_16 %>|<%= @purchase_17 %>|<%= @purchase_18 %>|<%= @purchase_19 %>|<%= @purchase_20 %>|<%= @purchase_21 %>|<%= @purchase_22 %>|<%= @purchase_23 %>|<%= @purchase_24 %>|<%= @purchase_25 %>|<%= @purchase_26 %>|<%= @purchase_27 %>|<%= @purchase_28 %>|<%= @purchase_29 %>|<%= @purchase_30 %>|<%= @purchase_31 %>|<%= @purchase_32 %>|<%= @purchase_33 %>|<%= @purchase_34 %>|<%= @purchase_35 %>|<%= @purchase_36 %>|<%= @purchase_37 %>|
+<% end %>
 <% end %>

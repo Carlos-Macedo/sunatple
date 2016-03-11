@@ -46,6 +46,11 @@ class CreatePurchases < ActiveRecord::Migration
       t.string :indicador_de_bancarizacion
       t.string :estado_oportunidad_de_anotacion
       t.boolean :no_domiciliado, default: false
+      t.string :no_domiciliado_pais
+      t.string :no_domiciliado_denominacion
+      t.string :no_domiciliado_domicilio
+      t.string :no_domiciliado_identificacion
+      t.string :no_domiciliado_tipo_de_renta
 
       t.timestamps null: false
     end

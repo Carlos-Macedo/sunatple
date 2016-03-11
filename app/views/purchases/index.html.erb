@@ -1,12 +1,16 @@
 <div>
   <h1 class="text-center">COMPRAS</h1>
-
-  <%= link_to "Borrar", purchases_path(delete: "all"), data: {confirm: "seguor?"} %>
-  <%= link_to "Descargar PLE (080100)", purchases_path(format: :txt, type: "080100"), target: "_blank" %>
-  <%= link_to "Descargar PLE (080200)", purchases_path(format: :txt, type: "080200"), target: "_blank" %>
-  <%= link_to "Descargar PLE (080300)", purchases_path(format: :txt, type: "080300"), target: "_blank" %>
+  <ul class="menu align-right">
+    <li><%= link_to "Borrar todas", purchases_path(delete: "all"), data: {confirm: "seguor?"} %></li>
+    <li><%= link_to "Descargar PLE (080100) #{@purchases.where(no_domiciliado: false).count}", purchases_path(format: :txt, type: "080100"), target: "_blank" %></li>
+    <li><%= link_to "Descargar PLE (080200) #{@purchases.where(no_domiciliado: true).count}", purchases_path(format: :txt, type: "080200"), target: "_blank" %></li>
+    <% if false %>
+        <li><%= link_to "Descargar PLE (080300)", purchases_path(format: :txt, type: "080300"), target: "_blank" %></li>
+    <% end %>
+  </ul>
   <hr>
-  <fieldset>
+  <fieldset class="fieldset">
+    <legend>Subir compras</legend>
     <%= form_tag subir_excel_purchase_path, multipart: true do %>
         <%= file_field_tag :file %>
         <%= submit_tag "Subir el EXCEL", class: "button expand margin-none", name: "upload" %>
@@ -60,6 +64,12 @@
         <th>inconsistecia_por_dni</th>
         <th>indicador_de_bancarizacion</th>
         <th>estado_oportunidad_de_anotacion</th>
+        <th>no_domiciliado</th>
+        <th>no_domiciliado_pais</th>
+        <th>no_domiciliado_denominacion</th>
+        <th>no_domiciliado_domicilio</th>
+        <th>no_domiciliado_identificacion</th>
+        <th>no_domiciliado_tipo_de_renta</th>
       </tr>
       <% @purchases.each do |purchase| %>
           <tr>
@@ -107,6 +117,12 @@
             <td><%= purchase.inconsistecia_por_dni %></td>
             <td><%= purchase.indicador_de_bancarizacion %></td>
             <td><%= purchase.estado_oportunidad_de_anotacion %></td>
+            <td><%= purchase.no_domiciliado %></td>
+            <td><%= purchase.no_domiciliado_pais %></td>
+            <td><%= purchase.no_domiciliado_denominacion %></td>
+            <td><%= purchase.no_domiciliado_domicilio %></td>
+            <td><%= purchase.no_domiciliado_identificacion %></td>
+            <td><%= purchase.no_domiciliado_tipo_de_renta %></td>
           </tr>
       <% end %>
     </table>

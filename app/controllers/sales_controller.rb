@@ -39,8 +39,8 @@ class SalesController < ApplicationController
           sale.fecha_emision = spreadsheet.cell(i, 2)
           sale.fecha_vencimiento = spreadsheet.cell(i, 3)
           sale.tipo_comprobante = spreadsheet.cell(i, 4)
-          sale.serie = spreadsheet.cell(i, 5).to_s.split(' ').first
-          sale.numero = spreadsheet.cell(i, 5).to_s.split(' ').last
+          sale.serie = spreadsheet.cell(i, 5).to_s.split(' ').first.to_s.sub(/^[0:]*/, "").strip
+          sale.numero = spreadsheet.cell(i, 5).to_s.split(' ').last.to_s.sub(/^[0:]*/, "").strip
           sale.numero_final = ""
           if spreadsheet.cell(i, 6).to_s.split(' ').first == "01"
             tipo_doc = 1
@@ -52,7 +52,7 @@ class SalesController < ApplicationController
             tipo_doc = 7
           end
           sale.tipo_documento = tipo_doc
-          sale.numero_ruc = spreadsheet.cell(i, 6).to_s.split(' ').last[0..10]
+          sale.numero_ruc = spreadsheet.cell(i, 6).to_s.split(' ').last
           sale.denominacion = spreadsheet.cell(i, 7)
           sale.exportacion = spreadsheet.cell(i, 8)
           sale.gravada = spreadsheet.cell(i, 9)
@@ -70,14 +70,14 @@ class SalesController < ApplicationController
           sale.tipo_cambio = spreadsheet.cell(i, 15).blank? ? "1.000" : spreadsheet.cell(i, 15)
           sale.fecha_comprobante_modificado = spreadsheet.cell(i, 16)
           sale.tipo_comprobante_modificado = spreadsheet.cell(i, 17)
-          sale.serie_comprobante_modificado = spreadsheet.cell(i, 18).to_s.split(' ').first
-          sale.numero_comprobante_modificado = spreadsheet.cell(i, 18).to_s.split(' ').last
+          sale.serie_comprobante_modificado = spreadsheet.cell(i, 18).to_s.split(' ').first.to_s.sub(/^[0:]*/, "").strip
+          sale.numero_comprobante_modificado = spreadsheet.cell(i, 18).to_s.split(' ').last.to_s.sub(/^[0:]*/, "").strip
           sale.identificacion_contrato_proyecto = ""
           sale.inconsistencia_tipo__cambio = ""
           sale.indicador_comprobante_cancelado = ""
           sale.estado_oportunidad_de_anotacion = ""
           unless sale.save
-            flash[:warning] = "Error #{sale.errors.full_messages}"
+            flash[:warning] = "Error #{sale.errors.full_messages} - FILA #{i}"
             redirect_to root_path and return
           end
         end

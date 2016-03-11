@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
+$(function(){ $(document).foundation(); });
 $(function () {
     $('#current_ruc').on('change', function () {
         var current_ruc = "?current_ruc=" + $(this).val();
@@ -38,4 +39,3 @@ $(function () {
         return false;
     });
 });
-$(function(){ $(document).foundation(); });

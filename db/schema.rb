@@ -61,8 +61,14 @@ ActiveRecord::Schema.define(version: 20160210031344) do
     t.string   "inconsistecia_por_dni"
     t.string   "indicador_de_bancarizacion"
     t.string   "estado_oportunidad_de_anotacion"
-    t.datetime "created_at",                                                     null: false
-    t.datetime "updated_at",                                                     null: false
+    t.boolean  "no_domiciliado",                                                 default: false
+    t.string   "no_domiciliado_pais"
+    t.string   "no_domiciliado_denominacion"
+    t.string   "no_domiciliado_domicilio"
+    t.string   "no_domiciliado_identificacion"
+    t.string   "no_domiciliado_tipo_de_renta"
+    t.datetime "created_at",                                                                     null: false
+    t.datetime "updated_at",                                                                     null: false
   end
 
   create_table "sales", force: :cascade do |t|

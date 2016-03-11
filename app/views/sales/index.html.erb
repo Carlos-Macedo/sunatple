@@ -1,10 +1,14 @@
 <h1 class="text-center">VENTAS</h1>
-
-<%= link_to "Borrar", sales_path(delete: "all"), data: {confirm: "seguor?"} %>
-<%= link_to "Descargar PLE (140100)", sales_path(format: :txt, type: "140100"), target: "_blank" %>
-<%= link_to "Descargar PLE (140200)", sales_path(format: :txt, type: "140200"), target: "_blank" %>
+<ul class="menu align-right">
+  <li><%= link_to "Borrar todas", sales_path(delete: "all"), data: {confirm: "seguor?"} %></li>
+  <li><%= link_to "Descargar PLE (140100)", sales_path(format: :txt, type: "140100"), target: "_blank" %></li>
+  <% if false %>
+      <li><%= link_to "Descargar PLE (140200)", sales_path(format: :txt, type: "140200"), target: "_blank" %></li>
+  <% end %>
+</ul>
 <hr>
-<fieldset>
+<fieldset class="fieldset">
+  <legend>Subir ventas</legend>
   <%= form_tag subir_excel_sale_path, multipart: true do %>
       <%= file_field_tag :file %>
       <%= submit_tag "Subir el EXCEL", class: "button expand margin-none", name: "upload" %>
